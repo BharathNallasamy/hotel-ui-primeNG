@@ -1,0 +1,634 @@
+[
+  {
+    "id": 1405892,
+    "name": "The Imperial Palace",
+    "city": 336,
+    "city_name": "Chennai",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800",
+    "rating": 5,
+    "area": "Anna Salai",
+    "address": "132 Anna Salai, Teynampet, Chennai 600018",
+    "amenities": [
+      "Free WiFi",
+      "Pool",
+      "Spa",
+      "Restaurant",
+      "Bar",
+      "Gym",
+      "Valet Parking"
+    ],
+    "price": 6500,
+    "freeCancellation": true,
+    "onlyLeft": 2,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405893,
+    "name": "Seaside Retreat Chennai",
+    "city": 336,
+    "city_name": "Chennai",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800",
+    "rating": 4,
+    "area": "Besant Nagar",
+    "address": "Elliot's Beach, Besant Nagar, Chennai 600090",
+    "amenities": [
+      "Free WiFi",
+      "Beach View",
+      "Restaurant",
+      "Parking",
+      "Room Service"
+    ],
+    "price": 4800,
+    "freeCancellation": true,
+    "onlyLeft": 4,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405894,
+    "name": "Budget Stay Chennai Airport",
+    "city": 336,
+    "city_name": "Chennai",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800",
+    "rating": 3,
+    "area": "Meenambakkam",
+    "address": "GST Road, Near Airport, Chennai 600027",
+    "amenities": [
+      "Free WiFi",
+      "AC Rooms",
+      "Airport Shuttle",
+      "24/7 Reception"
+    ],
+    "price": 1600,
+    "freeCancellation": false,
+    "onlyLeft": 12,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405895,
+    "name": "Pink City Heritage Hotel",
+    "city": 315,
+    "city_name": "Jaipur",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1631049552057-403cdb8f0658?w=800",
+    "rating": 5,
+    "area": "Civil Lines",
+    "address": "Jacob Road, Civil Lines, Jaipur 302006",
+    "amenities": [
+      "Free WiFi",
+      "Pool",
+      "Spa",
+      "Restaurant",
+      "Heritage Property",
+      "Cultural Shows"
+    ],
+    "price": 7500,
+    "freeCancellation": true,
+    "onlyLeft": 3,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405896,
+    "name": "Rajputana Haveli",
+    "city": 315,
+    "city_name": "Jaipur",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?w=800",
+    "rating": 4,
+    "area": "Amer",
+    "address": "Near Amer Fort, Jaipur 302028",
+    "amenities": [
+      "Free WiFi",
+      "Rooftop Restaurant",
+      "Fort View",
+      "Traditional Decor",
+      "Parking"
+    ],
+    "price": 3800,
+    "freeCancellation": true,
+    "onlyLeft": 5,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405897,
+    "name": "Goa Beach Shack Resort",
+    "city": 75,
+    "city_name": "Goa",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800",
+    "rating": 3,
+    "area": "Anjuna",
+    "address": "Anjuna Beach Road, Goa 403509",
+    "amenities": [
+      "Free WiFi",
+      "Beach Access",
+      "Restaurant",
+      "Live Music",
+      "Yoga Classes"
+    ],
+    "price": 2800,
+    "freeCancellation": true,
+    "onlyLeft": 8,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405898,
+    "name": "Palolem Paradise Resort",
+    "city": 75,
+    "city_name": "Goa",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800",
+    "rating": 4,
+    "area": "Palolem",
+    "address": "Palolem Beach, South Goa 403702",
+    "amenities": [
+      "Free WiFi",
+      "Beach Huts",
+      "Restaurant",
+      "Water Sports",
+      "Dolphin Tours"
+    ],
+    "price": 3600,
+    "freeCancellation": true,
+    "onlyLeft": 4,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405899,
+    "name": "Himalayan View Lodge",
+    "city": 125,
+    "city_name": "Manali",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800",
+    "rating": 3,
+    "area": "Solang Valley",
+    "address": "Solang Valley Road, Manali 175143",
+    "amenities": [
+      "Free WiFi",
+      "Mountain View",
+      "Bonfire",
+      "Parking",
+      "Adventure Activities"
+    ],
+    "price": 2200,
+    "freeCancellation": false,
+    "onlyLeft": 7,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405900,
+    "name": "Alpine Luxury Resort",
+    "city": 125,
+    "city_name": "Manali",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800",
+    "rating": 5,
+    "area": "Naggar",
+    "address": "Naggar Castle Road, Manali 175136",
+    "amenities": [
+      "Free WiFi",
+      "Spa",
+      "Restaurant",
+      "Heated Pool",
+      "Valley View",
+      "Library",
+      "Art Gallery"
+    ],
+    "price": 8800,
+    "freeCancellation": true,
+    "onlyLeft": 2,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405901,
+    "name": "Magnetic Hills Camp",
+    "city": 150,
+    "city_name": "Ladakh-Leh",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800",
+    "rating": 4,
+    "area": "Magnetic Hill",
+    "address": "Srinagar-Leh Highway, Leh 194101",
+    "amenities": [
+      "Camping",
+      "Bonfire",
+      "Mountain View",
+      "Stargazing",
+      "Local Cuisine"
+    ],
+    "price": 3000,
+    "freeCancellation": true,
+    "onlyLeft": 8,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405902,
+    "name": "Pangong Lake View Resort",
+    "city": 150,
+    "city_name": "Ladakh-Leh",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "rating": 4,
+    "area": "Pangong",
+    "address": "Pangong Lake, Spangmik Village, Leh 194101",
+    "amenities": [
+      "Lake View",
+      "Restaurant",
+      "Heated Rooms",
+      "Photography Tours",
+      "Oxygen Support"
+    ],
+    "price": 4500,
+    "freeCancellation": false,
+    "onlyLeft": 5,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405903,
+    "name": "Bangkok Sky Tower Hotel",
+    "city": 20651,
+    "city_name": "Bangkok",
+    "country": "Thailand",
+    "country_id": 186,
+    "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800",
+    "rating": 4,
+    "area": "Asok",
+    "address": "Sukhumvit Road Soi 21, Bangkok 10110",
+    "amenities": [
+      "Free WiFi",
+      "Rooftop Bar",
+      "Pool",
+      "Gym",
+      "Restaurant",
+      "Sky Lounge"
+    ],
+    "price": 5800,
+    "freeCancellation": true,
+    "onlyLeft": 6,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405904,
+    "name": "Riverside Boutique Hotel Bangkok",
+    "city": 20651,
+    "city_name": "Bangkok",
+    "country": "Thailand",
+    "country_id": 186,
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
+    "rating": 5,
+    "area": "Riverside",
+    "address": "Charoennakorn Road, Bangkok 10600",
+    "amenities": [
+      "Free WiFi",
+      "River View",
+      "Spa",
+      "Restaurant",
+      "Boat Service",
+      "Pool",
+      "Thai Massage"
+    ],
+    "price": 9500,
+    "freeCancellation": true,
+    "onlyLeft": 2,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405905,
+    "name": "Backpackers Haven Bangkok",
+    "city": 20651,
+    "city_name": "Bangkok",
+    "country": "Thailand",
+    "country_id": 186,
+    "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800",
+    "rating": 3,
+    "area": "Khao San Road",
+    "address": "Khao San Road, Phra Nakhon, Bangkok 10200",
+    "amenities": [
+      "Free WiFi",
+      "Dormitory",
+      "Common Kitchen",
+      "Bar",
+      "Social Events"
+    ],
+    "price": 900,
+    "freeCancellation": true,
+    "onlyLeft": 15,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405906,
+    "name": "Mumbai Sea View Hotel",
+    "city": 420,
+    "city_name": "Mumbai",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
+    "rating": 5,
+    "area": "Marine Drive",
+    "address": "Marine Drive, Mumbai 400020",
+    "amenities": [
+      "Free WiFi",
+      "Sea View",
+      "Restaurant",
+      "Bar",
+      "Spa",
+      "Pool",
+      "Valet Parking"
+    ],
+    "price": 12000,
+    "freeCancellation": true,
+    "onlyLeft": 2,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405907,
+    "name": "Colaba Heritage Inn",
+    "city": 420,
+    "city_name": "Mumbai",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800",
+    "rating": 4,
+    "area": "Colaba",
+    "address": "Near Gateway of India, Colaba, Mumbai 400001",
+    "amenities": [
+      "Free WiFi",
+      "Restaurant",
+      "Heritage Building",
+      "Travel Desk",
+      "Room Service"
+    ],
+    "price": 5500,
+    "freeCancellation": true,
+    "onlyLeft": 4,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405908,
+    "name": "Mumbai Airport Express Hotel",
+    "city": 420,
+    "city_name": "Mumbai",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800",
+    "rating": 3,
+    "area": "Andheri",
+    "address": "Near International Airport, Andheri East, Mumbai 400059",
+    "amenities": [
+      "Free WiFi",
+      "Airport Shuttle",
+      "AC Rooms",
+      "24/7 Reception",
+      "Restaurant"
+    ],
+    "price": 3200,
+    "freeCancellation": false,
+    "onlyLeft": 10,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405909,
+    "name": "Delhi Capital Palace",
+    "city": 380,
+    "city_name": "New Delhi",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800",
+    "rating": 5,
+    "area": "Connaught Place",
+    "address": "Connaught Place, New Delhi 110001",
+    "amenities": [
+      "Free WiFi",
+      "Restaurant",
+      "Bar",
+      "Spa",
+      "Pool",
+      "Business Center",
+      "Concierge"
+    ],
+    "price": 8500,
+    "freeCancellation": true,
+    "onlyLeft": 3,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405910,
+    "name": "Paharganj Budget Inn",
+    "city": 380,
+    "city_name": "New Delhi",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800",
+    "rating": 3,
+    "area": "Paharganj",
+    "address": "Main Bazaar, Paharganj, New Delhi 110055",
+    "amenities": [
+      "Free WiFi",
+      "AC Rooms",
+      "Travel Desk",
+      "Rooftop Cafe"
+    ],
+    "price": 1200,
+    "freeCancellation": true,
+    "onlyLeft": 8,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405911,
+    "name": "Aerocity Premium Suites",
+    "city": 380,
+    "city_name": "New Delhi",
+    "country": "India",
+    "country_id": 137,
+    "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800",
+    "rating": 4,
+    "area": "Aerocity",
+    "address": "Hospitality District, Aerocity, New Delhi 110037",
+    "amenities": [
+      "Free WiFi",
+      "Airport Shuttle",
+      "Restaurant",
+      "Gym",
+      "Pool",
+      "Business Center"
+    ],
+    "price": 6800,
+    "freeCancellation": true,
+    "onlyLeft": 5,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405912,
+    "name": "Dubai Marina Elite Hotel",
+    "city": 2872,
+    "city_name": "Dubai",
+    "country": "UAE",
+    "country_id": 230,
+    "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800",
+    "rating": 5,
+    "area": "Dubai Marina",
+    "address": "Dubai Marina Walk, Dubai",
+    "amenities": [
+      "Free WiFi",
+      "Pool",
+      "Spa",
+      "Marina View",
+      "Restaurant",
+      "Bar",
+      "Gym",
+      "Concierge"
+    ],
+    "price": 15000,
+    "freeCancellation": true,
+    "onlyLeft": 2,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  },
+  {
+    "id": 1405913,
+    "name": "Burj Khalifa View Apartments",
+    "city": 2872,
+    "city_name": "Dubai",
+    "country": "UAE",
+    "country_id": 230,
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
+    "rating": 5,
+    "area": "Downtown Dubai",
+    "address": "Sheikh Mohammed Bin Rashid Boulevard, Dubai",
+    "amenities": [
+      "Free WiFi",
+      "Burj View",
+      "Kitchen",
+      "Pool",
+      "Gym",
+      "Parking",
+      "24/7 Security"
+    ],
+    "price": 18000,
+    "freeCancellation": true,
+    "onlyLeft": 1,
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200"
+    ]
+  }
+]

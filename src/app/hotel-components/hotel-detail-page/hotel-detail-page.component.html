@@ -1,0 +1,387 @@
+<!-- Loading State -->
+<div *ngIf="isLoading" class="container my-5">
+    <div class="row">
+        <div class="col-12">
+            <p-card>
+                <p-skeleton width="100%" height="400px" styleClass="mb-3"></p-skeleton>
+                <p-skeleton width="60%" height="30px" styleClass="mb-2"></p-skeleton>
+                <p-skeleton width="40%" height="20px" styleClass="mb-3"></p-skeleton>
+                <p-skeleton width="100%" height="100px"></p-skeleton>
+            </p-card>
+        </div>
+    </div>
+</div>
+
+<!-- Hotel Details Content -->
+<div *ngIf="!isLoading && hotel" class="hotel-details-page">
+    <!-- Header with breadcrumb and actions -->
+    <div class="details-header bg-light py-3 mb-4">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <div>
+                    <p-button (onClick)="goBack()" icon="pi pi-arrow-left" label="Back to Search" [text]="true"
+                        severity="secondary"></p-button>
+                </div>
+                <div class="d-flex gap-2">
+                    <p-button (onClick)="shareHotel()" icon="pi pi-share-alt" [text]="true" severity="secondary"
+                        pTooltip="Share"></p-button>
+                    <p-button (onClick)="addToWishlist()" icon="pi pi-heart" [text]="true" severity="secondary"
+                        pTooltip="Add to Wishlist"></p-button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row g-4">
+            <!-- Main Content -->
+            <div class="col-12 col-lg-8">
+                <!-- Image Gallery -->
+                <p-card styleClass="mb-4 border-0 shadow-sm">
+                    <div class="image-gallery">
+                        <!-- Main Image -->
+                        <div class="main-image mb-3 position-relative">
+                            <img [src]="selectedImage" [alt]="hotel.name" class="w-100 rounded-3"
+                                style="height: 500px; object-fit: cover;" />
+                            <span *ngIf="hotel.freeCancellation"
+                                class="position-absolute top-0 start-0 m-3 badge bg-success fs-6">
+                                <i class="pi pi-check me-2"></i>Free Cancellation
+                            </span>
+                            <span *ngIf="hotel.onlyLeft && hotel.onlyLeft <= 5"
+                                class="position-absolute top-0 end-0 m-3 badge bg-danger fs-6">
+                                <i class="pi pi-exclamation-triangle me-2"></i>Only {{ hotel.onlyLeft }} Rooms Left
+                            </span>
+                        </div>
+
+                        <!-- Thumbnail Gallery -->
+                        <div class="row g-2">
+                            <div class="col-3" *ngFor="let thumb of hotel.thumbnails">
+                                <img [src]="thumb" [alt]="hotel.name"
+                                    class="w-100 rounded-2 cursor-pointer thumbnail-image"
+                                    [class.active]="selectedImage === thumb" (click)="selectImage(thumb)"
+                                    style="height: 100px; object-fit: cover;" />
+                            </div>
+                        </div>
+                    </div>
+                </p-card>
+
+                <!-- Hotel Info -->
+                <p-card styleClass="mb-4 border-0 shadow-sm">
+                    <div class="hotel-info">
+                        <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap gap-3">
+                            <div>
+                                <h1 class="mb-2">{{ hotel.name }}</h1>
+                                <div class="d-flex align-items-center gap-3 flex-wrap">
+                                    <div class="d-flex align-items-center">
+                                        <i class="pi pi-map-marker me-2 text-primary"></i>
+                                        <span class="text-muted">{{ hotel.area }}, {{ hotel.city_name }}, {{
+                                            hotel.country }}</span>
+                                    </div>
+                                    <div class="rating-badge">
+                                        <span class="badge bg-primary fs-6">
+                                            <i class="pi pi-star-fill me-1"></i>
+                                            {{ hotel.rating }}/10
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <div class="price-display">
+                                    <div class="text-muted small">Starting from</div>
+                                    <h2 class="text-primary mb-0">₹{{ hotel.price }}</h2>
+                                    <div class="text-muted small">per night</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p-divider></p-divider>
+
+                        <!-- Address -->
+                        <div class="mb-4">
+                            <h5 class="mb-3">
+                                <i class="pi pi-map me-2"></i>Location
+                            </h5>
+                            <p class="text-muted mb-0">{{ hotel.address }}</p>
+                        </div>
+
+                        <!-- Amenities -->
+                        <div class="mb-4">
+                            <h5 class="mb-3">
+                                <i class="pi pi-star me-2"></i>Amenities
+                            </h5>
+                            <div class="row g-2">
+                                <div class="col-6 col-md-4" *ngFor="let amenity of hotel.amenities">
+                                    <div class="amenity-item p-2 rounded bg-light">
+                                        <i class="pi pi-check-circle text-success me-2"></i>
+                                        <span>{{ amenity }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </p-card>
+
+                <!-- Tabs Section -->
+                <p-card styleClass="mb-4 border-0 shadow-sm">
+                    <p-tabView [(activeIndex)]="activeTab">
+                        <!-- Overview Tab -->
+                        <p-tabPanel header="Overview">
+                            <div class="overview-content py-3">
+                                <h5 class="mb-3">About This Property</h5>
+                                <p class="text-muted mb-4">
+                                    Experience comfort and luxury at {{ hotel.name }}. Located in the heart of {{
+                                    hotel.city_name }},
+                                    our hotel offers easy access to major attractions and business districts. With
+                                    modern amenities
+                                    and exceptional service, we ensure your stay is memorable.
+                                </p>
+
+                                <h5 class="mb-3">Nearby Attractions</h5>
+                                <div class="row g-3">
+                                    <div class="col-6 col-md-3" *ngFor="let attraction of nearbyAttractions">
+                                        <div class="attraction-card p-3 rounded bg-light text-center">
+                                            <i [class]="'pi ' + attraction.icon + ' fs-3 text-primary mb-2'"></i>
+                                            <div class="fw-semibold">{{ attraction.name }}</div>
+                                            <small class="text-muted">{{ attraction.distance }}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </p-tabPanel>
+
+                        <!-- Reviews Tab -->
+                        <p-tabPanel header="Reviews">
+                            <div class="reviews-content py-3">
+                                <!-- Rating Summary -->
+                                <div class="rating-summary mb-4 p-4 bg-light rounded">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-4 text-center border-end">
+                                            <h1 class="display-3 mb-0 text-primary">{{ getAverageRating().toFixed(1) }}
+                                            </h1>
+                                            <div class="rating-stars mb-2">
+                                                <span *ngFor="let s of getStarArray(getAverageRating())"
+                                                    class="text-warning fs-5">★</span>
+                                                <span *ngFor="let s of getEmptyStarArray(getAverageRating())"
+                                                    class="text-muted fs-5">★</span>
+                                            </div>
+                                            <p class="text-muted mb-0">Based on {{ reviews.length }} reviews</p>
+                                        </div>
+                                        <div class="col-md-8 mt-3 mt-md-0">
+                                            <div *ngFor="let star of [5,4,3,2,1]"
+                                                class="d-flex align-items-center mb-2">
+                                                <span class="me-2" style="min-width: 60px;">{{ star }} Star</span>
+                                                <div class="flex-grow-1">
+                                                    <p-progressbar [value]="getRatingDistribution(star)"
+                                                        [showValue]="false" styleClass="rating-bar"></p-progressbar>
+                                                </div>
+                                                <span class="ms-2 text-muted">{{ getRatingDistribution(star).toFixed(0)
+                                                    }}%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Individual Reviews -->
+                                <div class="reviews-list">
+                                    <h5 class="mb-3">Guest Reviews</h5>
+                                    <div class="review-item mb-3 p-3 border rounded" *ngFor="let review of reviews">
+                                        <div class="d-flex gap-3">
+                                            <img [src]="review.avatar" [alt]="review.userName" class="rounded-circle"
+                                                style="width: 50px; height: 50px;" />
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                                    <div>
+                                                        <h6 class="mb-1">{{ review.userName }}</h6>
+                                                        <div class="rating-stars">
+                                                            <span *ngFor="let s of getStarArray(review.rating)"
+                                                                class="text-warning">★</span>
+                                                            <span *ngFor="let s of getEmptyStarArray(review.rating)"
+                                                                class="text-muted">★</span>
+                                                        </div>
+                                                    </div>
+                                                    <small class="text-muted">{{ review.date | date: 'MMM dd, yyyy'
+                                                        }}</small>
+                                                </div>
+                                                <p class="text-muted mb-0">{{ review.comment }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </p-tabPanel>
+
+                        <!-- Policies Tab -->
+                        <p-tabPanel header="Policies">
+                            <div class="policies-content py-3">
+                                <div class="policy-section mb-4">
+                                    <h5 class="mb-3">
+                                        <i class="pi pi-calendar-times me-2 text-danger"></i>Cancellation Policy
+                                    </h5>
+                                    <p class="text-muted" *ngIf="hotel.freeCancellation">
+                                        Free cancellation up to 48 hours before check-in. Cancellations made within 48
+                                        hours
+                                        will be charged 100% of the booking amount.
+                                    </p>
+                                    <p class="text-muted" *ngIf="!hotel.freeCancellation">
+                                        Non-refundable booking. No cancellations or modifications allowed.
+                                    </p>
+                                </div>
+
+                                <div class="policy-section mb-4">
+                                    <h5 class="mb-3">
+                                        <i class="pi pi-clock me-2 text-primary"></i>Check-in/Check-out
+                                    </h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p class="mb-1"><strong>Check-in:</strong> 2:00 PM onwards</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="mb-1"><strong>Check-out:</strong> 11:00 AM</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="policy-section mb-4">
+                                    <h5 class="mb-3">
+                                        <i class="pi pi-users me-2 text-primary"></i>Guest Policy
+                                    </h5>
+                                    <ul class="text-muted">
+                                        <li>Valid ID proof required at check-in</li>
+                                        <li>Couples must present marriage certificate or government-issued ID</li>
+                                        <li>Maximum 2 adults and 1 child per room</li>
+                                        <li>Pets not allowed</li>
+                                    </ul>
+                                </div>
+
+                                <div class="policy-section">
+                                    <h5 class="mb-3">
+                                        <i class="pi pi-shield me-2 text-primary"></i>Safety Measures
+                                    </h5>
+                                    <ul class="text-muted">
+                                        <li>Daily sanitization of rooms and common areas</li>
+                                        <li>Temperature checks at entrance</li>
+                                        <li>Contactless check-in/check-out available</li>
+                                        <li>24/7 security surveillance</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </p-tabPanel>
+                    </p-tabView>
+                </p-card>
+            </div>
+
+            <!-- Booking Sidebar -->
+            <div class="col-12 col-lg-4">
+                <div class="booking-sidebar sticky-top" style="top: 20px;">
+                    <p-card styleClass="border-0 shadow">
+                        <h4 class="mb-4 text-center">Book Your Stay</h4>
+
+                        <!-- Date Selection -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                <i class="pi pi-calendar me-2"></i>Check-in Date
+                            </label>
+                            <p-calendar [(ngModel)]="checkInDate" [showIcon]="true" [minDate]="checkInDate"
+                                (onSelect)="onDateChange()" styleClass="w-100" dateFormat="dd/mm/yy"></p-calendar>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                <i class="pi pi-calendar me-2"></i>Check-out Date
+                            </label>
+                            <p-calendar [(ngModel)]="checkOutDate" [showIcon]="true" [minDate]="checkInDate"
+                                (onSelect)="onDateChange()" styleClass="w-100" dateFormat="dd/mm/yy"></p-calendar>
+                        </div>
+
+                        <!-- Rooms and Guests -->
+                        <div class="d-flex flex-column gap-2">
+                            <div class="d-flex align-items-center gap-2 w-30">
+                                <label class="form-label fw-semibold mb-0">
+                                    <i class="pi pi-home me-2"></i>Rooms:
+                                </label>
+                                <p-inputNumber class="w-full" [showButtons]="true" [(ngModel)]="rooms" [min]="1"
+                                    [max]="10" (onInput)="onRoomsChange()"></p-inputNumber>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 w-30">
+                                <label class="form-label fw-semibold">
+                                    <i class="pi pi-users me-2"></i>Guests:
+                                </label>
+                                <p-inputNumber class="w-full" [showButtons]="true" [(ngModel)]="guests" [min]="1"
+                                    [max]="20" (onInput)="onRoomsChange()"></p-inputNumber>
+                            </div>
+                        </div>
+
+                        <p-divider></p-divider>
+
+                        <!-- Price Breakdown -->
+                        <div class="price-breakdown mb-3">
+                            <h5 class="mb-3">Price Breakdown</h5>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">₹{{ hotel.price }} × {{ totalNights }} night(s)</span>
+                                <span>₹{{ hotel.price * totalNights }}</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">{{ rooms }} room(s)</span>
+                                <span>×{{ rooms }}</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Service charge</span>
+                                <span>₹{{ (totalPrice * 0.05).toFixed(0) }}</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Taxes (12%)</span>
+                                <span>₹{{ (totalPrice * 0.12).toFixed(0) }}</span>
+                            </div>
+
+                            <p-divider></p-divider>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Total</h5>
+                                <h4 class="mb-0 text-primary">₹{{ (totalPrice * 1.17).toFixed(0) }}</h4>
+                            </div>
+                        </div>
+
+                        <!-- Book Button -->
+                        <p-button label="Book Now" icon="pi pi-check-circle" (onClick)="bookNow()" styleClass="w-100"
+                            size="large"></p-button>
+
+                        <div class="text-center mt-3">
+                            <small class="text-muted">
+                                <i class="pi pi-info-circle me-1"></i>
+                                You won't be charged yet
+                            </small>
+                        </div>
+                    </p-card>
+
+                    <!-- Contact Card -->
+                    <p-card styleClass="mt-3 border-0 shadow">
+                        <h5 class="mb-3">Need Help?</h5>
+                        <div class="contact-info">
+                            <div class="mb-2">
+                                <i class="pi pi-phone me-2 text-primary"></i>
+                                <a href="tel:+911234567890" class="text-decoration-none">+91 123 456 7890</a>
+                            </div>
+                            <div class="mb-2">
+                                <i class="pi pi-envelope me-2 text-primary"></i>
+                                <a href="" class="text-decoration-none">support.hotel.com</a>
+                                <!-- mailto:support@hotel.com -->
+                            </div>
+                            <div>
+                                <i class="pi pi-whatsapp me-2 text-success"></i>
+                                <a href="https://wa.me/911234567890" class="text-decoration-none">WhatsApp Support</a>
+                            </div>
+                        </div>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Not Found State -->
+<div *ngIf="!isLoading && !hotel" class="container text-center py-5">
+    <i class="pi pi-exclamation-circle" style="font-size: 5rem; color: #dee2e6;"></i>
+    <h3 class="mt-4 mb-2">Hotel Not Found</h3>
+    <p class="text-muted mb-4">The hotel you're looking for doesn't exist or has been removed.</p>
+    <p-button label="Back to Search" (onClick)="goBack()" icon="pi pi-arrow-left"></p-button>
+</div>
