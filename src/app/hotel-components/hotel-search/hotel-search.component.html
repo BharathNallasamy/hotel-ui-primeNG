@@ -11,8 +11,7 @@
                             <i class="pi pi-map-marker me-2"></i>Destination
                         </label>
                         <p-select appendTo="body" [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"
-                            [filter]="true" filterBy="name" [showClear]="true" placeholder="Where are you going?"
-                            styleClass="w-100">
+                            [filter]="true" filterBy="name" [showClear]="true" placeholder="Where are you going?" styleClass="w-100">
                             <ng-template #selectedItem let-selectedOption>
                                 <div class="d-flex align-items-center gap-2">
                                     <i class="pi pi-map-marker"></i>
