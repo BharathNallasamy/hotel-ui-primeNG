@@ -1,11 +1,6 @@
 <!-- Hero Search Section -->
 <div class="search-hero bg-gradient">
     <div class="container py-5">
-        <div class="text-center mb-4">
-            <h1 class="display-4 fw-bold text-white mb-2">Find Your Perfect Stay</h1>
-            <p class="text-white-50">Search from thousands of hotels worldwide</p>
-        </div>
-
         <!-- Search Card -->
         <div class="card shadow-lg border-0 rounded-4">
             <div class="card-body p-4">
@@ -220,7 +215,7 @@
             <!-- Hotels Grid View -->
             <div *ngIf="viewMode === 'grid' && filteredHotel.length > 0" class="row g-3">
                 <div class="col-12 col-md-6 col-xl-4" *ngFor="let hotel of filteredHotel">
-                    <p-card styleClass="hotel-card h-100 border-0 shadow-sm hover-lift cursor-pointer"
+                    <p-card styleClass="hotel-card h-100 border-0 shadow-sm hover-lift pointer"
                         (click)="navigateToHotelDetails(hotel.id)">
                         <div class="hotel-card-content">
                             <!-- Hotel Image -->
@@ -281,8 +276,9 @@
             </div>
 
             <!-- Hotels List View -->
-            <div *ngIf="viewMode === 'list' && filteredHotel.length > 0" class="d-flex flex-column gap-3">
-                <p-card *ngFor="let hotel of filteredHotel" styleClass="hotel-card-list border-0 shadow-sm hover-lift">
+            <div *ngIf="viewMode === 'list' && filteredHotel.length > 0" class="d-flex flex-column gap-3 pointer">
+                <p-card *ngFor="let hotel of filteredHotel" styleClass="hotel-card-list border-0 shadow-sm hover-lift"
+                    (click)="navigateToHotelDetails(hotel.id)">
                     <div class="row g-3">
                         <!-- Image -->
                         <div class="col-12 col-md-4 col-lg-3">

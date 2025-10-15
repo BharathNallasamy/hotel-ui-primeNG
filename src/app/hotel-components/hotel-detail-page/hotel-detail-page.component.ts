@@ -200,7 +200,8 @@ export class HotelDetailPageComponent implements OnInit {
     });
 
     // You can implement your booking logic here
-    // For example: this.router.navigate(['/booking', this.hotelId]);
+    // For example:
+    // this.router.navigate(['/booking', this.hotelId]);
   }
 
   goBack(): void {

@@ -23,6 +23,7 @@ import { DividerModule } from 'primeng/divider';
 import { ButtonGroupModule } from 'primeng/buttongroup';
 import { TabViewModule } from 'primeng/tabview';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   exports: [
@@ -46,7 +47,8 @@ import { ProgressBarModule } from 'primeng/progressbar';
     DividerModule,
     ButtonGroupModule,
     TabViewModule,
-    ProgressBarModule
+    ProgressBarModule,
+    InputNumberModule,
   ],
 })
 export class PrimeNgModule {}
