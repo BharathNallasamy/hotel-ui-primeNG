@@ -22,17 +22,4 @@ export const routes: Routes = [
     path: '**',
     redirectTo: '/hotel-search',
   },
-  // {
-  //   path: '',
-  //   component: HotelSearchComponent,
-  // },
-  // {
-  //   path: 'hotel-details',
-  //   component: HotelDetailPageComponent,
-  // },
-  // {
-  //   path: '**',
-  //   redirectTo: '',
-  //   pathMatch: 'full',
-  // },
 ];

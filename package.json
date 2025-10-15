@@ -8,8 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "git": "git add . && git commit -m 'update' && git push",
-    "predeploy": "ng build --configuration production --base-href https://bharathnallasamy.github.io/hotel-ui-primeNG/",
-    "deploy": "gh-pages -d dist/hotel-ui-prime-ng",
+    "predeploy": "ng build --configuration production --base-href /hotel-ui-primeNG/",
+  "deploy": "npx angular-cli-ghpages --dir=dist/hotel-ui-prime-ng/browser",
     "upload": "ng build --configuration production --base-href ./"
   },
   "private": true,
@@ -35,6 +35,7 @@
     "@angular/cli": "^19.2.17",
     "@angular/compiler-cli": "^19.2.0",
     "@types/jasmine": "~5.1.0",
+    "angular-cli-ghpages": "^2.0.3",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
