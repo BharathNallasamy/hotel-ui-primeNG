@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
-// import { BehaviorSubject, Observable } from 'rxjs';
 import { Observable, of } from 'rxjs';
 import hotelData from '../../../assets/data/new_hotel_data.json';
 
@@ -51,11 +49,24 @@ export class DatasService {
   }
 
   // ✅ New function to get unique city names
-  getCityNames(): Observable<{ name: string }[]> {
-    const cities = this.hotels.map((hotel) => hotel.city_name);
-    const uniqueCities = Array.from(new Set(cities));
-    // Map to object format
-    const cityObjects = uniqueCities.map((city) => ({ name: city }));
+  getCityNames(): Observable<{ id: number; name: string }[]> {
+    // Create a map to ensure unique cities while preserving ID reference
+    const cityMap = new Map<string, number>();
+
+    this.hotels.forEach((hotel) => {
+      if (!cityMap.has(hotel.city_name)) {
+        // Use the first hotel ID found for this city as reference
+        cityMap.set(hotel.city_name, hotel.id);
+      }
+    });
+
+    const cityObjects = Array.from(cityMap.entries()).map(
+      ([cityName, hotelId]) => ({
+        id: hotelId,
+        name: cityName,
+      })
+    );
+
     return of(cityObjects);
   }
 }

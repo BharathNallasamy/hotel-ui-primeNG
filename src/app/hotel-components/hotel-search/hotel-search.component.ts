@@ -9,6 +9,11 @@ interface CityOption {
   name: string;
 }
 
+enum ViewModeEnum {
+  GRID = 'grid',
+  LIST = 'list',
+}
+
 type SortOption =
   | 'price-asc'
   | 'price-desc'
@@ -40,7 +45,9 @@ export class HotelSearchComponent {
 
   // New features
   sortBy: SortOption = 'price-asc';
-  viewMode: 'grid' | 'list' = 'grid';
+  // viewMode: 'grid' | 'list' = 'grid';
+  ViewMode = ViewModeEnum;
+  viewMode: ViewModeEnum = ViewModeEnum.GRID;
   selectedAmenities: string[] = [];
   availableAmenities: string[] = [];
   showFilters: boolean = true;
@@ -183,8 +190,15 @@ export class HotelSearchComponent {
     }
   }
 
+  // toggleViewMode(): void {
+  //   this.viewMode = this.viewMode === 'grid' ? 'list' : 'grid';
+  // }
+
   toggleViewMode(): void {
-    this.viewMode = this.viewMode === 'grid' ? 'list' : 'grid';
+    this.viewMode =
+      this.viewMode === ViewModeEnum.GRID
+        ? ViewModeEnum.LIST
+        : ViewModeEnum.GRID;
   }
 
   toggleFilters(): void {

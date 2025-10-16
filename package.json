@@ -9,7 +9,7 @@
     "test": "ng test",
     "git": "git add . && git commit -m 'update' && git push",
     "predeploy": "ng build --configuration production --base-href /hotel-ui-primeNG/",
-  "deploy": "npx angular-cli-ghpages --dir=dist/hotel-ui-prime-ng/browser",
+    "deploy": "npx angular-cli-ghpages --dir=dist/hotel-ui-prime-ng/browser",
     "upload": "ng build --configuration production --base-href ./"
   },
   "private": true,
