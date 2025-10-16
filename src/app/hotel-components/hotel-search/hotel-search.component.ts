@@ -45,7 +45,6 @@ export class HotelSearchComponent {
 
   // New features
   sortBy: SortOption = 'price-asc';
-  // viewMode: 'grid' | 'list' = 'grid';
   ViewMode = ViewModeEnum;
   viewMode: ViewModeEnum = ViewModeEnum.GRID;
   selectedAmenities: string[] = [];
@@ -73,7 +72,7 @@ export class HotelSearchComponent {
 
     this.datasService.getCityNames().subscribe((data) => {
       this.cities = data;
-      console.log('City options for dropdown:', this.cities);
+      // console.log('City options for dropdown:', this.cities);
     });
   }
 
@@ -85,6 +84,7 @@ export class HotelSearchComponent {
     this.isLoading = true;
     this.searchPerformed = true;
 
+    // Skeleton Loading before the original data loads using the setTimeout function
     setTimeout(() => {
       this.datasService
         .getHotelsByCity(this.selectedCity?.name ?? '')
@@ -113,6 +113,7 @@ export class HotelSearchComponent {
     }, 1500);
   }
 
+  // Update the Range from Min to Max value based on the lowest value and the Highest value
   updateRange(type: 'min' | 'max', event: any): void {
     const value = Number(event.target.value);
 
@@ -128,6 +129,7 @@ export class HotelSearchComponent {
     this.applyFilters();
   }
 
+  // Clears all the filters
   clearFilters(): void {
     this.rangeValues = [this.minPrice, this.maxPrice];
     this.rating = '';
@@ -189,10 +191,6 @@ export class HotelSearchComponent {
         return sorted;
     }
   }
-
-  // toggleViewMode(): void {
-  //   this.viewMode = this.viewMode === 'grid' ? 'list' : 'grid';
-  // }
 
   toggleViewMode(): void {
     this.viewMode =

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { PrimeNgModule } from '../../../primengModule/primeng.module';
 import { DatasService, Hotel } from '../../services/datas/datas.service';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { Subscription } from 'rxjs';
 
 interface Review {
   id: number;
@@ -34,6 +35,15 @@ export class HotelDetailPageComponent implements OnInit {
   rooms: number = 1;
   totalNights: number = 1;
   totalPrice: number = 0;
+
+  // Subscriptions
+  private bookingDetailsSubscription?: Subscription;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private datasService: DatasService
+  ) {}
 
   // Gallery
   responsiveOptions: any[] = [
@@ -105,12 +115,6 @@ export class HotelDetailPageComponent implements OnInit {
     { name: 'Airport', distance: '15 km', icon: 'pi-send' },
     { name: 'Tourist Spot', distance: '3 km', icon: 'pi-map-marker' },
   ];
-
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private datasService: DatasService
-  ) {}
 
   ngOnInit(): void {
     // Get hotel ID from route params
