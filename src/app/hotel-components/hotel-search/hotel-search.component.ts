@@ -5,7 +5,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PrimeNgModule } from '../../../primengModule/primeng.module';
 import { Subject, takeUntil } from 'rxjs';
-import { CityOption, Hotel, HotelSearchParams } from '../../interfaces/user.interface';
+import {
+  CityOption,
+  Hotel,
+  HotelSearchParams,
+} from '../../interfaces/user.interface';
 import { ViewModeEnum } from '../../enums/enums.enum';
 
 type SortOption =

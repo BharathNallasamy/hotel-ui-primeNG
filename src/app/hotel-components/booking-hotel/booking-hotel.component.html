@@ -254,7 +254,7 @@
                         <p-button label="Proceed to Payment" icon="pi pi-arrow-right" iconPos="right"
                             (onClick)="proceedToPayment()" styleClass="w-100" size="large"
                             [disabled]="!acceptTerms"></p-button>
-                        
+
                         <div class="text-center mt-3">
                             <small class="text-muted">
                                 <i class="pi pi-shield me-1"></i>
@@ -288,18 +288,19 @@
 </div>
 
 <!-- Success Dialog with Confetti -->
-<p-dialog [(visible)]="showSuccessDialog" [modal]="true" [closable]="false" [style]="{width: '90vw', maxWidth: '500px'}" styleClass="success-dialog">
+<p-dialog [(visible)]="showSuccessDialog" [modal]="true" [closable]="false" [style]="{width: '90vw', maxWidth: '500px'}"
+    styleClass="success-dialog">
     <ng-template pTemplate="content">
         <!-- Confetti Canvas -->
         <canvas #confettiCanvas class="confetti-canvas"></canvas>
-        
+
         <div class="text-center py-4 position-relative">
             <div class="success-icon mb-3">
                 <i class="pi pi-check-circle text-success" style="font-size: 5rem;"></i>
             </div>
             <h3 class="mb-3">🎉 Booking Confirmed! 🎉</h3>
             <p class="text-muted mb-3">Your reservation has been successfully confirmed.</p>
-            
+
             <div class="booking-ref-card p-3 bg-light rounded mb-4">
                 <div class="text-muted small mb-1">Booking Reference</div>
                 <h4 class="text-primary mb-0">{{ bookingReference }}</h4>
@@ -319,6 +320,7 @@
         </div>
     </ng-template>
 </p-dialog>
+
 
 <!-- Not Found State -->
 <div *ngIf="!isLoading && !hotel" class="container text-center py-5">
