@@ -46,7 +46,7 @@ export class HotelSearchComponent implements OnInit, OnDestroy {
   maxPrice: number = 100;
 
   sortBy: SortOption = 'price-asc';
-  ViewMode = ViewModeEnum;
+  ViewModeEnum = ViewModeEnum;
   viewMode: ViewModeEnum = ViewModeEnum.GRID;
   selectedAmenities: string[] = [];
   availableAmenities: string[] = [];
