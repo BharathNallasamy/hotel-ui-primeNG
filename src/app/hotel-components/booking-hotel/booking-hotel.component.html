@@ -1,1 +1,329 @@
-<p>booking-hotel works!</p>
+<!-- Loading State -->
+<div *ngIf="isLoading" class="container my-5">
+    <div class="row">
+        <div class="col-12">
+            <p-card>
+                <p-skeleton width="100%" height="200px" styleClass="mb-3"></p-skeleton>
+                <p-skeleton width="60%" height="30px" styleClass="mb-2"></p-skeleton>
+                <p-skeleton width="100%" height="400px"></p-skeleton>
+            </p-card>
+        </div>
+    </div>
+</div>
+
+<!-- Booking Page Content -->
+<div *ngIf="!isLoading && hotel" class="booking-page">
+    <!-- Header -->
+    <div class="booking-header bg-light py-3 mb-4">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <div>
+                    <h3 class="mb-1">
+                        <i class="pi pi-shopping-cart me-2"></i>Complete Your Booking
+                    </h3>
+                    <p class="text-muted mb-0 small">Please review your details and confirm</p>
+                </div>
+                <p-button (onClick)="goToHotelDetails()" icon="pi pi-arrow-left" label="Back to Hotel"
+                    severity="secondary" [text]="true"></p-button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row g-4">
+            <!-- Left Column - Forms -->
+            <div class="col-12 col-lg-8">
+                <!-- Guest Details -->
+                <p-card styleClass="mb-4 border-0 shadow-sm">
+                    <div class="card-header-custom mb-4">
+                        <h5 class="mb-0">
+                            <i class="pi pi-user me-2 text-primary"></i>Guest Details
+                        </h5>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label fw-semibold">
+                                First Name <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" class="form-control" [(ngModel)]="guestDetails.firstName"
+                                placeholder="Enter first name" pInputText />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label fw-semibold">
+                                Last Name <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" class="form-control" [(ngModel)]="guestDetails.lastName"
+                                placeholder="Enter last name" pInputText />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label fw-semibold">
+                                Email <span class="text-danger">*</span>
+                            </label>
+                            <input type="email" class="form-control" [(ngModel)]="guestDetails.email"
+                                placeholder="Enter email address" pInputText />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label fw-semibold">
+                                Phone Number <span class="text-danger">*</span>
+                            </label>
+                            <input type="tel" class="form-control" [(ngModel)]="guestDetails.phone"
+                                placeholder="Enter phone number" pInputText />
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">
+                                Special Requests <span class="text-muted small">(Optional)</span>
+                            </label>
+                            <textarea class="form-control" [(ngModel)]="guestDetails.specialRequests" rows="3"
+                                placeholder="Any special requirements? (e.g., early check-in, specific floor)"
+                                pInputTextarea></textarea>
+                        </div>
+                    </div>
+                </p-card>
+
+                <!-- Payment Method -->
+                <p-card styleClass="mb-4 border-0 shadow-sm">
+                    <div class="card-header-custom mb-4">
+                        <h5 class="mb-0">
+                            <i class="pi pi-wallet me-2 text-primary"></i>Payment Method
+                        </h5>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-6 col-md-3" *ngFor="let method of paymentMethods">
+                            <div class="payment-method-card" [class.selected]="selectedPaymentMethod === method.id"
+                                (click)="selectedPaymentMethod = method.id">
+                                <i [class]="'pi ' + method.icon + ' fs-2 mb-2'"></i>
+                                <div class="fw-semibold">{{ method.name }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info mt-3" role="alert">
+                        <i class="pi pi-info-circle me-2"></i>
+                        You will be redirected to a secure payment gateway to complete the transaction.
+                    </div>
+                </p-card>
+
+                <!-- Terms and Conditions -->
+                <p-card styleClass="border-0 shadow-sm">
+                    <div class="d-flex align-items-start">
+                        <p-checkbox [(ngModel)]="acceptTerms" [binary]="true" inputId="terms"
+                            styleClass="me-3"></p-checkbox>
+                        <label for="terms" class="cursor-pointer">
+                            <span>I agree to the </span>
+                            <a href="#" class="text-primary">Terms and Conditions</a>
+                            <span> and </span>
+                            <a href="#" class="text-primary">Cancellation Policy</a>
+                            <span class="text-danger"> *</span>
+                        </label>
+                    </div>
+
+                    <div class="mt-3 p-3 bg-light rounded">
+                        <h6 class="mb-2">Important Information:</h6>
+                        <ul class="mb-0 small text-muted">
+                            <li>Check-in time: 2:00 PM | Check-out time: 11:00 AM</li>
+                            <li>Valid ID proof required at check-in</li>
+                            <li *ngIf="hotel.freeCancellation">Free cancellation up to 48 hours before check-in</li>
+                            <li *ngIf="!hotel.freeCancellation">Non-refundable booking</li>
+                            <li>Payment is processed securely</li>
+                        </ul>
+                    </div>
+                </p-card>
+
+                <!-- Mobile Action Button -->
+                <div class="d-lg-none mt-4">
+                    <p-button label="Proceed to Payment" icon="pi pi-arrow-right" iconPos="right"
+                        (onClick)="proceedToPayment()" styleClass="w-100" size="large"
+                        [disabled]="!acceptTerms"></p-button>
+                </div>
+            </div>
+
+            <!-- Right Column - Summary -->
+            <div class="col-12 col-lg-4">
+                <div class="booking-summary sticky-top" style="top: 20px;">
+                    <!-- Hotel Summary -->
+                    <p-card styleClass="mb-3 border-0 shadow">
+                        <h5 class="mb-3">Booking Summary</h5>
+
+                        <!-- Hotel Info -->
+                        <div class="hotel-summary-info mb-3">
+                            <img [src]="hotel.image" [alt]="hotel.name" class="w-100 rounded-3 mb-3"
+                                style="height: 150px; object-fit: cover;" />
+                            <h6 class="mb-2">{{ hotel.name }}</h6>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="pi pi-map-marker me-1 text-muted small"></i>
+                                <small class="text-muted">{{ hotel.city_name }}, {{ hotel.country }}</small>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="rating-stars me-2">
+                                    <span *ngFor="let s of getStarArray(hotel.rating)" class="text-warning">★</span>
+                                </div>
+                                <span class="badge bg-primary">{{ hotel.rating }}/10</span>
+                            </div>
+                        </div>
+
+                        <p-divider></p-divider>
+
+                        <!-- Booking Details -->
+                        <div class="booking-details mb-3">
+                            <div class="detail-row mb-2">
+                                <div class="d-flex align-items-center">
+                                    <i class="pi pi-map-marker me-2 text-primary"></i>
+                                    <span class="fw-semibold">Destination</span>
+                                </div>
+                                <!-- <span>{{ selectedCity?.name }}</span> -->
+                            </div>
+                            <div class="detail-row mb-2">
+                                <div class="d-flex align-items-center">
+                                    <i class="pi pi-calendar me-2 text-primary"></i>
+                                    <span class="fw-semibold">Check-in</span>
+                                </div>
+                                <span>{{ checkInDate | date: 'dd MMM yyyy' }}</span>
+                            </div>
+                            <div class="detail-row mb-2">
+                                <div class="d-flex align-items-center">
+                                    <i class="pi pi-calendar me-2 text-primary"></i>
+                                    <span class="fw-semibold">Check-out</span>
+                                </div>
+                                <span>{{ checkOutDate | date: 'dd MMM yyyy' }}</span>
+                            </div>
+                            <div class="detail-row mb-2">
+                                <div class="d-flex align-items-center">
+                                    <i class="pi pi-clock me-2 text-primary"></i>
+                                    <span class="fw-semibold">Nights</span>
+                                </div>
+                                <span>{{ totalNights }}</span>
+                            </div>
+                            <div class="detail-row mb-2">
+                                <div class="d-flex align-items-center">
+                                    <i class="pi pi-home me-2 text-primary"></i>
+                                    <span class="fw-semibold">Rooms</span>
+                                </div>
+                                <span>{{ rooms }}</span>
+                            </div>
+                            <div class="detail-row">
+                                <div class="d-flex align-items-center">
+                                    <i class="pi pi-users me-2 text-primary"></i>
+                                    <span class="fw-semibold">Guests</span>
+                                </div>
+                                <span>{{ guests }}</span>
+                            </div>
+                        </div>
+
+                        <p-divider></p-divider>
+
+                        <!-- Price Breakdown -->
+                        <div class="price-breakdown">
+                            <h6 class="mb-3">Price Details</h6>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">₹{{ hotel.price }} × {{ totalNights }} night(s) × {{ rooms }}
+                                    room(s)</span>
+                                <span>₹{{ basePrice.toFixed(0) }}</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Service charge (5%)</span>
+                                <span>₹{{ serviceCharge.toFixed(0) }}</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-muted">Taxes & fees (12%)</span>
+                                <span>₹{{ taxes.toFixed(0) }}</span>
+                            </div>
+
+                            <p-divider></p-divider>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Total Amount</h5>
+                                <h4 class="mb-0 text-primary">₹{{ finalAmount.toFixed(0) }}</h4>
+                            </div>
+                        </div>
+
+                        <!-- Cancellation Policy Badge -->
+                        <div class="mt-3">
+                            <span *ngIf="hotel.freeCancellation" class="badge bg-success-subtle text-success w-100 p-2">
+                                <i class="pi pi-check-circle me-1"></i>Free Cancellation Available
+                            </span>
+                            <span *ngIf="!hotel.freeCancellation" class="badge bg-danger-subtle text-danger w-100 p-2">
+                                <i class="pi pi-times-circle me-1"></i>Non-Refundable
+                            </span>
+                        </div>
+                    </p-card>
+
+                    <!-- Desktop Action Button -->
+                    <div class="d-none d-lg-block">
+                        <p-button label="Proceed to Payment" icon="pi pi-arrow-right" iconPos="right"
+                            (onClick)="proceedToPayment()" styleClass="w-100" size="large"
+                            [disabled]="!acceptTerms"></p-button>
+                        
+                        <div class="text-center mt-3">
+                            <small class="text-muted">
+                                <i class="pi pi-shield me-1"></i>
+                                Your payment information is secure
+                            </small>
+                        </div>
+                    </div>
+
+                    <!-- Contact Support -->
+                    <p-card styleClass="mt-3 border-0 shadow">
+                        <h6 class="mb-3">Need Help?</h6>
+                        <div class="contact-info small">
+                            <div class="mb-2">
+                                <i class="pi pi-phone me-2 text-primary"></i>
+                                <a href="tel:+911234567890" class="text-decoration-none">+91 123 456 7890</a>
+                            </div>
+                            <div class="mb-2">
+                                <i class="pi pi-envelope me-2 text-primary"></i>
+                                <a href="#" class="text-decoration-none">support.hotel.com</a>
+                            </div>
+                            <div>
+                                <i class="pi pi-whatsapp me-2 text-success"></i>
+                                <a href="https://wa.me/911234567890" class="text-decoration-none">WhatsApp</a>
+                            </div>
+                        </div>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Dialog with Confetti -->
+<p-dialog [(visible)]="showSuccessDialog" [modal]="true" [closable]="false" [style]="{width: '90vw', maxWidth: '500px'}" styleClass="success-dialog">
+    <ng-template pTemplate="content">
+        <!-- Confetti Canvas -->
+        <canvas #confettiCanvas class="confetti-canvas"></canvas>
+        
+        <div class="text-center py-4 position-relative">
+            <div class="success-icon mb-3">
+                <i class="pi pi-check-circle text-success" style="font-size: 5rem;"></i>
+            </div>
+            <h3 class="mb-3">🎉 Booking Confirmed! 🎉</h3>
+            <p class="text-muted mb-3">Your reservation has been successfully confirmed.</p>
+            
+            <div class="booking-ref-card p-3 bg-light rounded mb-4">
+                <div class="text-muted small mb-1">Booking Reference</div>
+                <h4 class="text-primary mb-0">{{ bookingReference }}</h4>
+            </div>
+
+            <div class="alert alert-info" role="alert">
+                <i class="pi pi-info-circle me-2"></i>
+                A confirmation email has been sent to {{ guestDetails.email }}
+            </div>
+
+            <div class="d-flex gap-2 flex-column flex-sm-row">
+                <p-button label="View Booking" icon="pi pi-eye" (onClick)="viewBookingDetails()"
+                    styleClass="flex-fill"></p-button>
+                <p-button label="Back to Home" icon="pi pi-home" (onClick)="goToHome()" severity="secondary"
+                    styleClass="flex-fill"></p-button>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>
+
+<!-- Not Found State -->
+<div *ngIf="!isLoading && !hotel" class="container text-center py-5">
+    <i class="pi pi-exclamation-circle" style="font-size: 5rem; color: #dee2e6;"></i>
+    <h3 class="mt-4 mb-2">Hotel Not Found</h3>
+    <p class="text-muted mb-4">Unable to load booking details.</p>
+    <p-button label="Back to Search" severity="primary" (onClick)="goToHome()" icon="pi pi-arrow-left"></p-button>
+</div>
