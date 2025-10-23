@@ -6,11 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { PrimeNgModule } from '../../../primengModule/primeng.module';
 import { Subject, takeUntil } from 'rxjs';
 import { CityOption, Hotel, HotelSearchParams } from '../../interfaces/user.interface';
-
-enum ViewModeEnum {
-  GRID = 'grid',
-  LIST = 'list',
-}
+import { ViewModeEnum } from '../../enums/enums.enum';
 
 type SortOption =
   | 'price-asc'

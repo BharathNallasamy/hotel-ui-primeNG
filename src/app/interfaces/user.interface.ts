@@ -43,3 +43,28 @@ export interface Review {
   comment: string;
   avatar?: string;
 }
+
+export interface GuestDetails {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  specialRequests?: string;
+}
+
+export interface PaymentMethod {
+  id: string;
+  name: string;
+  icon: string;
+}
+
+export interface Confetti {
+  x: number;
+  y: number;
+  r: number;
+  d: number;
+  color: string;
+  tilt: number;
+  tiltAngleIncremental: number;
+  tiltAngle: number;
+}
