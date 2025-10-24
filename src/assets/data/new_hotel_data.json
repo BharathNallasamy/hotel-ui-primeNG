@@ -1,6 +1,7 @@
 [
   {
     "id": 1405892,
+    "slug": "the-imperial-palace-chennai",
     "name": "The Imperial Palace",
     "city": 336,
     "city_name": "Chennai",
@@ -31,6 +32,7 @@
   },
   {
     "id": 1405893,
+    "slug": "seaside-retreat-chennai",
     "name": "Seaside Retreat Chennai",
     "city": 336,
     "city_name": "Chennai",
@@ -59,6 +61,7 @@
   },
   {
     "id": 1405894,
+    "slug": "budget-stay-chennai-airport",
     "name": "Budget Stay Chennai Airport",
     "city": 336,
     "city_name": "Chennai",
@@ -86,6 +89,7 @@
   },
   {
     "id": 1405895,
+    "slug": "pink-city-heritage-hotel-jaipur",
     "name": "Pink City Heritage Hotel",
     "city": 315,
     "city_name": "Jaipur",
@@ -115,6 +119,7 @@
   },
   {
     "id": 1405896,
+    "slug": "rajputana-haveli-jaipur",
     "name": "Rajputana Haveli",
     "city": 315,
     "city_name": "Jaipur",
@@ -143,6 +148,7 @@
   },
   {
     "id": 1405897,
+    "slug": "goa-beach-shack-resort-goa",
     "name": "Goa Beach Shack Resort",
     "city": 75,
     "city_name": "Goa",
@@ -171,6 +177,7 @@
   },
   {
     "id": 1405898,
+    "slug": "palolem-paradise-resort-goa",
     "name": "Palolem Paradise Resort",
     "city": 75,
     "city_name": "Goa",
@@ -199,6 +206,7 @@
   },
   {
     "id": 1405899,
+    "slug": "himalayan-view-lodge-manali",
     "name": "Himalayan View Lodge",
     "city": 125,
     "city_name": "Manali",
@@ -227,6 +235,7 @@
   },
   {
     "id": 1405900,
+    "slug": "alpine-luxury-resort-manali",
     "name": "Alpine Luxury Resort",
     "city": 125,
     "city_name": "Manali",
@@ -257,6 +266,7 @@
   },
   {
     "id": 1405901,
+    "slug": "magnetic-hills-camp-ladakh-leh",
     "name": "Magnetic Hills Camp",
     "city": 150,
     "city_name": "Ladakh-Leh",
@@ -285,6 +295,7 @@
   },
   {
     "id": 1405902,
+    "slug": "pangong-lake-view-resort-ladakh-leh",
     "name": "Pangong Lake View Resort",
     "city": 150,
     "city_name": "Ladakh-Leh",
@@ -313,6 +324,7 @@
   },
   {
     "id": 1405903,
+    "slug": "bangkok-sky-tower-hotel-bangkok",
     "name": "Bangkok Sky Tower Hotel",
     "city": 20651,
     "city_name": "Bangkok",
@@ -342,6 +354,7 @@
   },
   {
     "id": 1405904,
+    "slug": "riverside-boutique-hotel-bangkok",
     "name": "Riverside Boutique Hotel Bangkok",
     "city": 20651,
     "city_name": "Bangkok",
@@ -372,6 +385,7 @@
   },
   {
     "id": 1405905,
+    "slug": "backpackers-haven-bangkok",
     "name": "Backpackers Haven Bangkok",
     "city": 20651,
     "city_name": "Bangkok",
@@ -400,6 +414,7 @@
   },
   {
     "id": 1405906,
+    "slug": "mumbai-sea-view-hotel-mumbai",
     "name": "Mumbai Sea View Hotel",
     "city": 420,
     "city_name": "Mumbai",
@@ -430,6 +445,7 @@
   },
   {
     "id": 1405907,
+    "slug": "colaba-heritage-inn-mumbai",
     "name": "Colaba Heritage Inn",
     "city": 420,
     "city_name": "Mumbai",
@@ -458,6 +474,7 @@
   },
   {
     "id": 1405908,
+    "slug": "mumbai-airport-express-hotel-mumbai",
     "name": "Mumbai Airport Express Hotel",
     "city": 420,
     "city_name": "Mumbai",
@@ -486,6 +503,7 @@
   },
   {
     "id": 1405909,
+    "slug": "delhi-capital-palace-new-delhi",
     "name": "Delhi Capital Palace",
     "city": 380,
     "city_name": "New Delhi",
@@ -516,6 +534,7 @@
   },
   {
     "id": 1405910,
+    "slug": "paharganj-budget-inn-new-delhi",
     "name": "Paharganj Budget Inn",
     "city": 380,
     "city_name": "New Delhi",
@@ -543,6 +562,7 @@
   },
   {
     "id": 1405911,
+    "slug": "aerocity-premium-suites-new-delhi",
     "name": "Aerocity Premium Suites",
     "city": 380,
     "city_name": "New Delhi",
@@ -572,6 +592,7 @@
   },
   {
     "id": 1405912,
+    "slug": "dubai-marina-elite-hotel-dubai",
     "name": "Dubai Marina Elite Hotel",
     "city": 2872,
     "city_name": "Dubai",
@@ -603,6 +624,7 @@
   },
   {
     "id": 1405913,
+    "slug": "burj-khalifa-view-apartments-dubai",
     "name": "Burj Khalifa View Apartments",
     "city": 2872,
     "city_name": "Dubai",

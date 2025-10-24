@@ -2,7 +2,11 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import hotelData from '../../../assets/data/new_hotel_data.json';
-import { CityOption, Hotel, HotelSearchParams } from '../../interfaces/user.interface';
+import {
+  CityOption,
+  Hotel,
+  HotelSearchParams,
+} from '../../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -99,6 +103,12 @@ export class DatasService {
   getCitiesByCountry(country: string): Observable<CityOption[]> {
     return this.getCitiesForSearch().pipe(
       map((cities) => cities.filter((city) => city.country === country))
+    );
+  }
+
+  getHotelBySlug(slug: string): Observable<Hotel | undefined> {
+    return this.getHotels().pipe(
+      map((hotels) => hotels.find((h) => h.slug === slug))
     );
   }
 
@@ -236,5 +246,4 @@ export class DatasService {
 
     return of(filtered);
   }
-  
 }

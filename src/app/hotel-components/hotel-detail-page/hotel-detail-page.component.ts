@@ -19,6 +19,8 @@ export class HotelDetailPageComponent implements OnInit, OnDestroy {
   hotelId?: number;
   isLoading: boolean = true;
   selectedImage: string = '';
+  // hotelSlug
+  hotelSlug?: string;
 
   // Selected city
   selectedCity?: CityOption;
@@ -111,11 +113,30 @@ export class HotelDetailPageComponent implements OnInit, OnDestroy {
     { name: 'Tourist Spot', distance: '3 km', icon: 'pi-map-marker' },
   ];
 
+  loadHotelDetailsBySlug(slug: string): void {
+    this.isLoading = true;
+    setTimeout(() => {
+      this.datasService.getHotelBySlug(slug).subscribe({
+        next: (hotel) => {
+          if (hotel) {
+            this.hotel = hotel;
+            this.hotelId = hotel.id; // Store ID for booking
+            this.selectedImage = this.hotel.image;
+            this.calculateTotalPrice();
+          }
+          this.isLoading = false;
+        },
+      });
+    }, 1000);
+  }
+
   ngOnInit(): void {
     // Get hotel ID from route params
     this.route.params.subscribe((params) => {
-      this.hotelId = +params['id'];
-      this.loadHotelDetails();
+      this.hotelSlug = params['id']; // ✅ Now gets slug from URL
+      this.loadHotelDetailsBySlug(this.hotelSlug);
+      // this.hotelId = +params['id'];
+      // this.loadHotelDetails();
     });
 
     // Subscribe to search parameters from the service
